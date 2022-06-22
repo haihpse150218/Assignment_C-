@@ -1,0 +1,12 @@
+CREATE DATABASE FStore
+GO
+USE FStore
+GO
+CREATE TABLE Member( 
+	id INT NOT NULL,
+	name NVARCHAR(255),
+	email NVARCHAR(255),
+	password NVARCHAR(255),
+	city NVARCHAR(255),
+	country NVARCHAR(255),
+)
