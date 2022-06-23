@@ -1,4 +1,9 @@
 {
-  "ExpandedNodes": [],
+  "ExpandedNodes": [
+    "",
+    "\\Ass01Solution",
+    "\\Ass01Solution\\MyStoreWinApp"
+  ],
+  "SelectedNode": "\\Ass01Solution\\MyStoreWinApp\\frmLogin.cs",
   "PreviewInSolutionExplorer": false
 }

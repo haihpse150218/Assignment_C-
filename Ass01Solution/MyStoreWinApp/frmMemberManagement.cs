@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataAccess.Repository;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,18 @@ namespace MyStoreWinApp
         public frmMemberManagement()
         {
             InitializeComponent();
+            LoadMemberList();
+        }
+        void LoadMemberList()
+        {
+            MemBerRepository memBerRepository = new MemBerRepository();
+            dgvDataView.DataSource = memBerRepository.ReadAll();
+            dgvDataView.AutoResizeColumns();
+            dgvDataView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+        private void dgvDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
