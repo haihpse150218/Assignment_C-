@@ -67,6 +67,36 @@ namespace DataAccess.Repository
                 return objT;
             }).ToList();
         }
+
+        public DataTable ConvertListOjbectToDataTable<T>(List<T> objectClass, string table_name = "Table")
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                dt.TableName = table_name;
+
+                foreach (PropertyInfo property in objectClass[0].GetType().GetProperties())
+                {
+                    dt.Columns.Add(new DataColumn(property.Name, property.PropertyType));
+                }
+
+                foreach (var vehicle in objectClass)
+                {
+                    DataRow newRow = dt.NewRow();
+                    foreach (PropertyInfo property in vehicle.GetType().GetProperties())
+                    {
+                        newRow[property.Name] = vehicle.GetType().GetProperty(property.Name).GetValue(vehicle, null);
+                    }
+                    dt.Rows.Add(newRow);
+                }
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return null;
+            }
+        }
         /// <summary>
         /// This fucntion get all list member from database and return list member
         /// </summary>
@@ -106,6 +136,61 @@ namespace DataAccess.Repository
                 connection.Close();
             }
             return members;
+        }
+        public IEnumerable<MemberObject> GetMemberByName(string name)
+        {
+            DataTable data = new DataTable();
+            var members = new List<MemberObject>();
+            string Sqlquery = "SELECT [id], [name], [email], [password], [city], [country] " +
+                "FROM[FStore].[dbo].[Member] where [name] LIKE @name";
+            using (SqlConnection connection = new SqlConnection(GetConnectionString()))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand(Sqlquery, connection);
+                command.Parameters.AddWithValue("@name", "%"+name.Trim()+"%");
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+
+                adapter.Fill(data);
+                members = ConvertToList<MemberObject>(data);
+                connection.Close();
+            }
+            return members;
+        }
+        public IEnumerable<string> GetCityList()
+        {
+            DataTable data = new DataTable();
+            IEnumerable<String> list;
+            string Sqlquery = "SELECT city FROM [FStore].[dbo].[Member] GROUP BY city;";
+            using (SqlConnection connection = new SqlConnection(GetConnectionString()))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand(Sqlquery, connection);
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                adapter.Fill(data);
+                list = data.AsEnumerable()
+                .Select(x => x.Field<string>("city"));
+                connection.Close();
+            }
+            
+            return null;
+        }
+        public IEnumerable<string> GetCountryList()
+        {
+            DataTable data = new DataTable();
+            IEnumerable<String> list;
+            var members = new List<string>();
+            string Sqlquery = "SELECT country FROM [FStore].[dbo].[Member] GROUP BY country;";
+            using (SqlConnection connection = new SqlConnection(GetConnectionString()))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand(Sqlquery, connection);
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                adapter.Fill(data);
+                list = data.AsEnumerable()
+                .Select(x => x.Field<string>("country"));
+                connection.Close();
+            }
+            return list;
         }
 
 

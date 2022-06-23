@@ -21,11 +21,49 @@ namespace MyStoreWinApp
         void LoadMemberList()
         {
             MemBerRepository memBerRepository = new MemBerRepository();
-            dgvDataView.DataSource = memBerRepository.ReadAll();
+            List<string> contryList = memBerRepository.GetCountryList().ToList();
+            // remake properties
+            var listContry = contryList.Select(s => new { value = s }).ToList();
+            dgvDataView.DataSource = listContry;
             dgvDataView.AutoResizeColumns();
             dgvDataView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
         private void dgvDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnRemoving_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnViewing_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSort_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCreating_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnModifying_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSearchById_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSearchByName_Click(object sender, EventArgs e)
         {
 
         }

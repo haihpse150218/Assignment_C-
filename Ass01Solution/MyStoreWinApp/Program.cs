@@ -17,7 +17,7 @@ namespace MyStoreWinApp
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMemberManagement());
+            Application.Run(new frmLogin());
         }
     }
 }

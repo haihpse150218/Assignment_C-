@@ -16,15 +16,25 @@ namespace MyStoreWinApp
         {
             InitializeComponent();
         }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void frmLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
+            if(MessageBox.Show("Are you sur to exit?","Exit Confirm", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.Cancel)
+            {
+                e.Cancel = true;
+            }
+        }
 
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            frmMemberManagement formManagerMember = new frmMemberManagement();
+            this.Hide();
+            formManagerMember.ShowDialog();
+            this.Show();
         }
     }
 }
