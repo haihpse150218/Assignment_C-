@@ -26,3 +26,14 @@
     ▪ Add CRUD and searching actions to WinForms application.
     ▪ Apply to validate data type for all fields
     ▪ Run the project and test the WinForms actions.
+    
+# Main Functions
+        ▪ Member management: Read, Create, Update and Delete actions. Creating
+        and Updating member must be performed by popup dialog
+        ▪ Search member by ID and Name
+        ▪ Filter members by City and Country
+        ▪ Sort member list descending order by MemberName
+        ▪ Member authentication by Email and Password. If the user is “Admin” then
+        allows to perform all actions, otherwise, the normal user allowed to view and
+        update their pieces of information
+
