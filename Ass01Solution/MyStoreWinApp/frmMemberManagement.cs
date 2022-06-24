@@ -50,12 +50,18 @@ namespace MyStoreWinApp
 
         private void btnCreating_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            frmCreate frmCreate = new frmCreate();
+            frmCreate.ShowDialog();
+            this.Show();
         }
 
         private void btnModifying_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            frmUpdateMember frmUpdate = new frmUpdateMember();
+            frmUpdate.ShowDialog();
+            this.Show();
         }
 
         private void btnSearchById_Click(object sender, EventArgs e)
