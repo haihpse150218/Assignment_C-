@@ -3,10 +3,11 @@ GO
 USE FStore
 GO
 CREATE TABLE Member( 
-	id INT NOT NULL,
+	id INT NOT NULL IDENTITY(1,1),
 	name NVARCHAR(255),
-	email NVARCHAR(255),
-	password NVARCHAR(255),
+	email NVARCHAR(255) UNIQUE NOT NULL,
+	password NVARCHAR(255) NOT NULL,
 	city NVARCHAR(255),
 	country NVARCHAR(255),
 )
+
