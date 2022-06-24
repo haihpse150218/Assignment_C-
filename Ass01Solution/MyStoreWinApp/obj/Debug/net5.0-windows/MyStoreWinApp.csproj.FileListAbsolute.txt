@@ -59,3 +59,5 @@ F:\FPT-ky 5\PRN211\workspace\Lap-1_Group\Assignment_C-\Ass01Solution\MyStoreWinA
 F:\FPT-ky 5\PRN211\workspace\Lap-1_Group\Assignment_C-\Ass01Solution\MyStoreWinApp\obj\Debug\net5.0-windows\MyStoreWinApp.csproj.CopyComplete
 F:\FPT-ky 5\PRN211\workspace\Lap-1_Group\Assignment_C-\Ass01Solution\MyStoreWinApp\obj\Debug\net5.0-windows\MyStoreWinApp.genruntimeconfig.cache
 F:\FPT-ky 5\PRN211\workspace\Lap-1_Group\Assignment_C-\Ass01Solution\MyStoreWinApp\obj\Debug\net5.0-windows\ref\MyStoreWinApp.dll
+F:\FPT-ky 5\PRN211\workspace\Lap-1_Group\Assignment_C-\Ass01Solution\MyStoreWinApp\obj\Debug\net5.0-windows\MyStoreWinApp.frmCreate.resources
+F:\FPT-ky 5\PRN211\workspace\Lap-1_Group\Assignment_C-\Ass01Solution\MyStoreWinApp\obj\Debug\net5.0-windows\MyStoreWinApp.frmUpdateMember.resources
