@@ -21,14 +21,12 @@ namespace MyStoreWinApp
         void LoadMemberList()
         {
             IMemBerRepository memBerRepository = new MemBerRepository();
-          
             dgvDataView.DataSource = memBerRepository.ReadAll(); 
             dgvDataView.AutoResizeColumns();
             dgvDataView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
         private void dgvDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
         }
 
         private void btnRemoving_Click(object sender, EventArgs e)
@@ -38,7 +36,7 @@ namespace MyStoreWinApp
 
         private void btnViewing_Click(object sender, EventArgs e)
         {
-
+            LoadMemberList();
         }
 
         private void btnSort_Click(object sender, EventArgs e)
@@ -48,18 +46,16 @@ namespace MyStoreWinApp
 
         private void btnCreating_Click(object sender, EventArgs e)
         {
-            this.Hide();
             frmCreate frmCreate = new frmCreate();
             frmCreate.ShowDialog();
-            this.Show();
+            
         }
 
         private void btnModifying_Click(object sender, EventArgs e)
-        {
-            this.Hide();
+        {  
             frmUpdateMember frmUpdate = new frmUpdateMember();
             frmUpdate.ShowDialog();
-            this.Show();
+            
         }
 
         private void btnSearchById_Click(object sender, EventArgs e)
