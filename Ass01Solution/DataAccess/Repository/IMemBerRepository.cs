@@ -11,5 +11,6 @@ namespace DataAccess.Repository
         public IEnumerable<MemberObject> GetMemberByName(string name);
         public IEnumerable<string> GetCountryList();
         public IEnumerable<string> GetCityList();
+        public bool Login(string email, string password, out string msg);
     }
 }

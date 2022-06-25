@@ -20,11 +20,9 @@ namespace MyStoreWinApp
         }
         void LoadMemberList()
         {
-            MemBerRepository memBerRepository = new MemBerRepository();
-            List<string> contryList = memBerRepository.GetCountryList().ToList();
-            // remake properties
-            var listContry = contryList.Select(s => new { value = s }).ToList();
-            dgvDataView.DataSource = listContry;
+            IMemBerRepository memBerRepository = new MemBerRepository();
+          
+            dgvDataView.DataSource = memBerRepository.ReadAll(); 
             dgvDataView.AutoResizeColumns();
             dgvDataView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
@@ -72,6 +70,21 @@ namespace MyStoreWinApp
         private void btnSearchByName_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            var a = sender.GetType();
+            this.Close();
+        }
+
+        private void frmMemberManagement_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            var b = sender.GetType();
+            if (MessageBox.Show("Are you sure to Logout?", "Logout Confirm", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.Cancel)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

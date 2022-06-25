@@ -27,6 +27,11 @@ namespace DataAccess.Repository
             return MemBerDAO.Instace.GetMemberByName(name);
         }
 
+        public bool Login(string email, string password, out string msg)
+        {
+            return MemBerDAO.Instace.Login(email, password, out msg);
+        }
+
         public IEnumerable<MemberObject> ReadAll()
         { 
             return MemBerDAO.Instace.GetAllMember();
