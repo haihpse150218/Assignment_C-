@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lbId = new System.Windows.Forms.Label();
-            this.lbName = new System.Windows.Forms.Label();
-            this.lbEmail = new System.Windows.Forms.Label();
-            this.lbPassword = new System.Windows.Forms.Label();
-            this.lbCity = new System.Windows.Forms.Label();
-            this.lbCountry = new System.Windows.Forms.Label();
-            this.txtUpdateID = new System.Windows.Forms.TextBox();
-            this.txtUpdateName = new System.Windows.Forms.TextBox();
-            this.txtUpdateEmail = new System.Windows.Forms.TextBox();
-            this.txtUpdatePassword = new System.Windows.Forms.TextBox();
-            this.txtUpdateCity = new System.Windows.Forms.TextBox();
-            this.txtUpdateCountry = new System.Windows.Forms.TextBox();
-            this.btnUpdate = new System.Windows.Forms.Button();
             this.btnCloseUpdate = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.txtUpdateCountry = new System.Windows.Forms.TextBox();
+            this.txtUpdateCity = new System.Windows.Forms.TextBox();
+            this.txtUpdatePassword = new System.Windows.Forms.TextBox();
+            this.txtUpdateEmail = new System.Windows.Forms.TextBox();
+            this.txtUpdateName = new System.Windows.Forms.TextBox();
+            this.txtUpdateID = new System.Windows.Forms.TextBox();
+            this.lbCountry = new System.Windows.Forms.Label();
+            this.lbCity = new System.Windows.Forms.Label();
+            this.lbPassword = new System.Windows.Forms.Label();
+            this.lbEmail = new System.Windows.Forms.Label();
+            this.lbName = new System.Windows.Forms.Label();
+            this.lbId = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,102 +67,15 @@
             this.panel1.Size = new System.Drawing.Size(356, 257);
             this.panel1.TabIndex = 0;
             // 
-            // lbId
+            // btnCloseUpdate
             // 
-            this.lbId.AutoSize = true;
-            this.lbId.Location = new System.Drawing.Point(20, 10);
-            this.lbId.Name = "lbId";
-            this.lbId.Size = new System.Drawing.Size(18, 15);
-            this.lbId.TabIndex = 0;
-            this.lbId.Text = "ID";
-            // 
-            // lbName
-            // 
-            this.lbName.AutoSize = true;
-            this.lbName.Location = new System.Drawing.Point(20, 46);
-            this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(39, 15);
-            this.lbName.TabIndex = 1;
-            this.lbName.Text = "Name";
-            // 
-            // lbEmail
-            // 
-            this.lbEmail.AutoSize = true;
-            this.lbEmail.Location = new System.Drawing.Point(20, 84);
-            this.lbEmail.Name = "lbEmail";
-            this.lbEmail.Size = new System.Drawing.Size(36, 15);
-            this.lbEmail.TabIndex = 2;
-            this.lbEmail.Text = "Email";
-            // 
-            // lbPassword
-            // 
-            this.lbPassword.AutoSize = true;
-            this.lbPassword.Location = new System.Drawing.Point(20, 120);
-            this.lbPassword.Name = "lbPassword";
-            this.lbPassword.Size = new System.Drawing.Size(57, 15);
-            this.lbPassword.TabIndex = 3;
-            this.lbPassword.Text = "Password";
-            // 
-            // lbCity
-            // 
-            this.lbCity.AutoSize = true;
-            this.lbCity.Location = new System.Drawing.Point(20, 153);
-            this.lbCity.Name = "lbCity";
-            this.lbCity.Size = new System.Drawing.Size(28, 15);
-            this.lbCity.TabIndex = 4;
-            this.lbCity.Text = "City";
-            // 
-            // lbCountry
-            // 
-            this.lbCountry.AutoSize = true;
-            this.lbCountry.Location = new System.Drawing.Point(20, 193);
-            this.lbCountry.Name = "lbCountry";
-            this.lbCountry.Size = new System.Drawing.Size(50, 15);
-            this.lbCountry.TabIndex = 5;
-            this.lbCountry.Text = "Country";
-            // 
-            // txtUpdateID
-            // 
-            this.txtUpdateID.Location = new System.Drawing.Point(103, 7);
-            this.txtUpdateID.Name = "txtUpdateID";
-            this.txtUpdateID.ReadOnly = true;
-            this.txtUpdateID.Size = new System.Drawing.Size(216, 23);
-            this.txtUpdateID.TabIndex = 6;
-            // 
-            // txtUpdateName
-            // 
-            this.txtUpdateName.Location = new System.Drawing.Point(103, 43);
-            this.txtUpdateName.Name = "txtUpdateName";
-            this.txtUpdateName.Size = new System.Drawing.Size(216, 23);
-            this.txtUpdateName.TabIndex = 7;
-            // 
-            // txtUpdateEmail
-            // 
-            this.txtUpdateEmail.Location = new System.Drawing.Point(103, 84);
-            this.txtUpdateEmail.Name = "txtUpdateEmail";
-            this.txtUpdateEmail.Size = new System.Drawing.Size(216, 23);
-            this.txtUpdateEmail.TabIndex = 8;
-            // 
-            // txtUpdatePassword
-            // 
-            this.txtUpdatePassword.Location = new System.Drawing.Point(103, 120);
-            this.txtUpdatePassword.Name = "txtUpdatePassword";
-            this.txtUpdatePassword.Size = new System.Drawing.Size(216, 23);
-            this.txtUpdatePassword.TabIndex = 9;
-            // 
-            // txtUpdateCity
-            // 
-            this.txtUpdateCity.Location = new System.Drawing.Point(103, 153);
-            this.txtUpdateCity.Name = "txtUpdateCity";
-            this.txtUpdateCity.Size = new System.Drawing.Size(216, 23);
-            this.txtUpdateCity.TabIndex = 10;
-            // 
-            // txtUpdateCountry
-            // 
-            this.txtUpdateCountry.Location = new System.Drawing.Point(103, 185);
-            this.txtUpdateCountry.Name = "txtUpdateCountry";
-            this.txtUpdateCountry.Size = new System.Drawing.Size(216, 23);
-            this.txtUpdateCountry.TabIndex = 11;
+            this.btnCloseUpdate.Location = new System.Drawing.Point(244, 231);
+            this.btnCloseUpdate.Name = "btnCloseUpdate";
+            this.btnCloseUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnCloseUpdate.TabIndex = 13;
+            this.btnCloseUpdate.Text = "Close";
+            this.btnCloseUpdate.UseVisualStyleBackColor = true;
+            this.btnCloseUpdate.Click += new System.EventHandler(this.btnCloseUpdate_Click);
             // 
             // btnUpdate
             // 
@@ -174,15 +87,102 @@
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // btnCloseUpdate
+            // txtUpdateCountry
             // 
-            this.btnCloseUpdate.Location = new System.Drawing.Point(244, 231);
-            this.btnCloseUpdate.Name = "btnCloseUpdate";
-            this.btnCloseUpdate.Size = new System.Drawing.Size(75, 23);
-            this.btnCloseUpdate.TabIndex = 13;
-            this.btnCloseUpdate.Text = "Close";
-            this.btnCloseUpdate.UseVisualStyleBackColor = true;
-            this.btnCloseUpdate.Click += new System.EventHandler(this.btnCloseUpdate_Click);
+            this.txtUpdateCountry.Location = new System.Drawing.Point(103, 185);
+            this.txtUpdateCountry.Name = "txtUpdateCountry";
+            this.txtUpdateCountry.Size = new System.Drawing.Size(216, 23);
+            this.txtUpdateCountry.TabIndex = 11;
+            // 
+            // txtUpdateCity
+            // 
+            this.txtUpdateCity.Location = new System.Drawing.Point(103, 153);
+            this.txtUpdateCity.Name = "txtUpdateCity";
+            this.txtUpdateCity.Size = new System.Drawing.Size(216, 23);
+            this.txtUpdateCity.TabIndex = 10;
+            // 
+            // txtUpdatePassword
+            // 
+            this.txtUpdatePassword.Location = new System.Drawing.Point(103, 120);
+            this.txtUpdatePassword.Name = "txtUpdatePassword";
+            this.txtUpdatePassword.Size = new System.Drawing.Size(216, 23);
+            this.txtUpdatePassword.TabIndex = 9;
+            // 
+            // txtUpdateEmail
+            // 
+            this.txtUpdateEmail.Location = new System.Drawing.Point(103, 84);
+            this.txtUpdateEmail.Name = "txtUpdateEmail";
+            this.txtUpdateEmail.Size = new System.Drawing.Size(216, 23);
+            this.txtUpdateEmail.TabIndex = 8;
+            // 
+            // txtUpdateName
+            // 
+            this.txtUpdateName.Location = new System.Drawing.Point(103, 43);
+            this.txtUpdateName.Name = "txtUpdateName";
+            this.txtUpdateName.Size = new System.Drawing.Size(216, 23);
+            this.txtUpdateName.TabIndex = 7;
+            // 
+            // txtUpdateID
+            // 
+            this.txtUpdateID.Location = new System.Drawing.Point(103, 7);
+            this.txtUpdateID.Name = "txtUpdateID";
+            this.txtUpdateID.ReadOnly = true;
+            this.txtUpdateID.Size = new System.Drawing.Size(216, 23);
+            this.txtUpdateID.TabIndex = 6;
+            // 
+            // lbCountry
+            // 
+            this.lbCountry.AutoSize = true;
+            this.lbCountry.Location = new System.Drawing.Point(20, 193);
+            this.lbCountry.Name = "lbCountry";
+            this.lbCountry.Size = new System.Drawing.Size(50, 15);
+            this.lbCountry.TabIndex = 5;
+            this.lbCountry.Text = "Country";
+            // 
+            // lbCity
+            // 
+            this.lbCity.AutoSize = true;
+            this.lbCity.Location = new System.Drawing.Point(20, 153);
+            this.lbCity.Name = "lbCity";
+            this.lbCity.Size = new System.Drawing.Size(28, 15);
+            this.lbCity.TabIndex = 4;
+            this.lbCity.Text = "City";
+            // 
+            // lbPassword
+            // 
+            this.lbPassword.AutoSize = true;
+            this.lbPassword.Location = new System.Drawing.Point(20, 120);
+            this.lbPassword.Name = "lbPassword";
+            this.lbPassword.Size = new System.Drawing.Size(57, 15);
+            this.lbPassword.TabIndex = 3;
+            this.lbPassword.Text = "Password";
+            // 
+            // lbEmail
+            // 
+            this.lbEmail.AutoSize = true;
+            this.lbEmail.Location = new System.Drawing.Point(20, 84);
+            this.lbEmail.Name = "lbEmail";
+            this.lbEmail.Size = new System.Drawing.Size(36, 15);
+            this.lbEmail.TabIndex = 2;
+            this.lbEmail.Text = "Email";
+            // 
+            // lbName
+            // 
+            this.lbName.AutoSize = true;
+            this.lbName.Location = new System.Drawing.Point(20, 46);
+            this.lbName.Name = "lbName";
+            this.lbName.Size = new System.Drawing.Size(39, 15);
+            this.lbName.TabIndex = 1;
+            this.lbName.Text = "Name";
+            // 
+            // lbId
+            // 
+            this.lbId.AutoSize = true;
+            this.lbId.Location = new System.Drawing.Point(20, 10);
+            this.lbId.Name = "lbId";
+            this.lbId.Size = new System.Drawing.Size(18, 15);
+            this.lbId.TabIndex = 0;
+            this.lbId.Text = "ID";
             // 
             // frmUpdateMember
             // 
@@ -191,6 +191,7 @@
             this.ClientSize = new System.Drawing.Size(384, 292);
             this.Controls.Add(this.panel1);
             this.Name = "frmUpdateMember";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Update Member";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
