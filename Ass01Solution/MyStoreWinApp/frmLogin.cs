@@ -1,12 +1,5 @@
 ﻿using DataAccess.Repository;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MyStoreWinApp
@@ -48,12 +41,17 @@ namespace MyStoreWinApp
             bool flag = false;
             string msg = null;
             IMemBerRepository memBerRepository = new MemBerRepository();
-           flag =  memBerRepository.Login(email, password, out msg);
+            flag =  memBerRepository.Login(email, password, out msg);
             if (msg != null)
             {
                 MessageBox.Show(msg);
             }
             return flag;
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
