@@ -1,4 +1,5 @@
-﻿using DataAccess.Repository;
+﻿using BusinessObject;
+using DataAccess.Repository;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,7 @@ namespace MyStoreWinApp
 {
     public partial class frmMemberManagement : Form
     {
+        MemberObject member;
         public frmMemberManagement()
         {
             InitializeComponent();
@@ -31,7 +33,14 @@ namespace MyStoreWinApp
 
         private void btnRemoving_Click(object sender, EventArgs e)
         {
-
+            member = dgvDataView.CurrentRow.DataBoundItem as MemberObject;
+            int id = member.id;
+            if (MessageBox.Show("Are you sure to remove this member?", "Remove Confirm", MessageBoxButtons.OK) == System.Windows.Forms.DialogResult.OK)
+            {
+                IMemBerRepository memBerRepository = new MemBerRepository();
+                memBerRepository.RemoveMember(id);
+                LoadMemberList();
+            }    
         }
 
         private void btnViewing_Click(object sender, EventArgs e)
@@ -52,10 +61,11 @@ namespace MyStoreWinApp
         }
 
         private void btnModifying_Click(object sender, EventArgs e)
-        {  
-            frmUpdateMember frmUpdate = new frmUpdateMember();
+        {
+            member = dgvDataView.CurrentRow.DataBoundItem as MemberObject;
+            frmUpdateMember frmUpdate = new frmUpdateMember(member);
             frmUpdate.ShowDialog();
-            
+            LoadMemberList();
         }
 
         private void btnSearchById_Click(object sender, EventArgs e)
@@ -81,6 +91,17 @@ namespace MyStoreWinApp
             {
                 e.Cancel = true;
             }
+        }
+
+        private void frmMemberManagement_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvDataView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            member = dgvDataView.CurrentRow.DataBoundItem as MemberObject;
+            frmUpdateMember formUpdate = new frmUpdateMember(member);
         }
     }
 }

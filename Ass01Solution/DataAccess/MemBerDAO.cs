@@ -46,6 +46,7 @@ namespace DataAccess.Repository
             GetDefaultAdmin();
             return connectionString;
         }
+
         public Object GetDefaultAdmin()
         {
             IConfiguration config = new ConfigurationBuilder()
@@ -166,6 +167,45 @@ namespace DataAccess.Repository
             }
             return members;
         }
+
+
+        internal void UpdateInfo(int id, string name, string email, string password, string city, string country)
+        {
+            string Sqlquery = "UPDATE Member SET name=@name, email=@email, password=@password, city=@city, country=@country WHERE id=@id";
+            using (SqlConnection connection = new SqlConnection(GetConnectionString()))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand(Sqlquery, connection);
+                command.Parameters.AddWithValue("@id", id);
+                command.Parameters.AddWithValue("@name", name);
+                command.Parameters.AddWithValue("@email", email);
+                command.Parameters.AddWithValue("@password", password);
+                command.Parameters.AddWithValue("@city", city);
+                command.Parameters.AddWithValue("@country", country);
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                command.ExecuteNonQuery();
+                connection.Close();
+            }
+        }
+
+        /// <summary>
+        /// This function do remove member by using id
+        /// </summary>
+        /// <param name="id"></param>
+        internal void RemoveMember(int id)
+        {
+            string Sqlquery = "DELETE Member WHERE id=@id";
+            using (SqlConnection connection = new SqlConnection(GetConnectionString()))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand(Sqlquery, connection);
+                command.Parameters.AddWithValue("@id", id);
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                command.ExecuteNonQuery();
+                connection.Close();
+            }
+        }
+
         /// <summary>
         /// This function get member by Name using like %@Name%
         /// </summary>
