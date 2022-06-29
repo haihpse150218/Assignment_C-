@@ -13,6 +13,7 @@ namespace MyStoreWinApp
 {
     public partial class frmMemberManagement : Form
     {
+        IMemBerRepository memBerRepository = new MemBerRepository();
         public frmMemberManagement()
         {
             InitializeComponent();
@@ -20,7 +21,6 @@ namespace MyStoreWinApp
         }
         void LoadMemberList()
         {
-            IMemBerRepository memBerRepository = new MemBerRepository();
             dgvDataView.DataSource = memBerRepository.ReadAll(); 
             dgvDataView.AutoResizeColumns();
             dgvDataView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -41,7 +41,9 @@ namespace MyStoreWinApp
 
         private void btnSort_Click(object sender, EventArgs e)
         {
-
+            var list = memBerRepository.DescendingSort().ToList();
+            dgvDataView.DataSource = list;
+            dgvDataView.Show();
         }
 
         private void btnCreating_Click(object sender, EventArgs e)
@@ -81,6 +83,30 @@ namespace MyStoreWinApp
             {
                 e.Cancel = true;
             }
+        }
+
+        private void cbFilterByCity_SelectedValueChanged(object sender, EventArgs e)
+        {
+            cbFilterByCountry.DisplayMember = "city";
+            ComboBox cb = sender as ComboBox;
+            var result = memBerRepository.GetMemberByCity(cb.ToString());
+            dgvDataView.DataSource = result;
+            dgvDataView.Show();
+        }
+
+        private void cbFilterByCountry_SelectedValueChanged(object sender, EventArgs e)
+        {
+            cbFilterByCity.DisplayMember = "country";
+            ComboBox cb = sender as ComboBox;
+            var result = memBerRepository.GetMemberByCountry(cb.ToString());
+            dgvDataView.DataSource = result;
+            dgvDataView.Show();
+        }
+
+        private void frmMemberManagement_Load(object sender, EventArgs e)
+        {
+            cbFilterByCity.DataSource = memBerRepository.GetCityList();
+            cbFilterByCountry.DataSource = memBerRepository.GetCountryList();
         }
     }
 }

@@ -10,3 +10,15 @@ F:\FPT-ky 5\PRN211\workspace\Lap-1_Group\Assignment_C-\Ass01Solution\BusinessObj
 F:\FPT-ky 5\PRN211\workspace\Lap-1_Group\Assignment_C-\Ass01Solution\BusinessObject\obj\Debug\net5.0\refint\BusinessObject.dll
 F:\FPT-ky 5\PRN211\workspace\Lap-1_Group\Assignment_C-\Ass01Solution\BusinessObject\obj\Debug\net5.0\BusinessObject.pdb
 F:\FPT-ky 5\PRN211\workspace\Lap-1_Group\Assignment_C-\Ass01Solution\BusinessObject\obj\Debug\net5.0\ref\BusinessObject.dll
+C:\Users\Administrator\Documents\PRN SE1621\Ass\Ass01Solution\BusinessObject\bin\Debug\net5.0\BusinessObject.deps.json
+C:\Users\Administrator\Documents\PRN SE1621\Ass\Ass01Solution\BusinessObject\bin\Debug\net5.0\BusinessObject.dll
+C:\Users\Administrator\Documents\PRN SE1621\Ass\Ass01Solution\BusinessObject\bin\Debug\net5.0\BusinessObject.pdb
+C:\Users\Administrator\Documents\PRN SE1621\Ass\Ass01Solution\BusinessObject\obj\Debug\net5.0\BusinessObject.csproj.AssemblyReference.cache
+C:\Users\Administrator\Documents\PRN SE1621\Ass\Ass01Solution\BusinessObject\obj\Debug\net5.0\BusinessObject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\Documents\PRN SE1621\Ass\Ass01Solution\BusinessObject\obj\Debug\net5.0\BusinessObject.AssemblyInfoInputs.cache
+C:\Users\Administrator\Documents\PRN SE1621\Ass\Ass01Solution\BusinessObject\obj\Debug\net5.0\BusinessObject.AssemblyInfo.cs
+C:\Users\Administrator\Documents\PRN SE1621\Ass\Ass01Solution\BusinessObject\obj\Debug\net5.0\BusinessObject.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Documents\PRN SE1621\Ass\Ass01Solution\BusinessObject\obj\Debug\net5.0\BusinessObject.dll
+C:\Users\Administrator\Documents\PRN SE1621\Ass\Ass01Solution\BusinessObject\obj\Debug\net5.0\refint\BusinessObject.dll
+C:\Users\Administrator\Documents\PRN SE1621\Ass\Ass01Solution\BusinessObject\obj\Debug\net5.0\BusinessObject.pdb
+C:\Users\Administrator\Documents\PRN SE1621\Ass\Ass01Solution\BusinessObject\obj\Debug\net5.0\ref\BusinessObject.dll

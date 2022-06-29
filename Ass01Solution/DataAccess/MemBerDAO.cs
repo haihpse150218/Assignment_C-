@@ -190,6 +190,52 @@ namespace DataAccess.Repository
             return members;
         }
         /// <summary>
+        /// This function get member by City using like %@City%
+        /// </summary>
+        /// <param name="city"></param>
+        /// <returns>return List member by Name</returns>
+        public IEnumerable<MemberObject> GetMemberByCity(string city)
+        {
+            DataTable data = new DataTable();
+            var members = new List<MemberObject>();
+            string Sqlquery = "SELECT [id], [name], [email], [password], [city], [country] " +
+                "FROM[FStore].[dbo].[Member] where [city] LIKE @city";
+            using (SqlConnection connection = new SqlConnection(GetConnectionString()))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand(Sqlquery, connection);
+                command.Parameters.AddWithValue("@city", "%" + city.Trim() + "%");
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                adapter.Fill(data);
+                members = ConvertToList<MemberObject>(data);
+                connection.Close();
+            }
+            return members;
+        }
+        /// <summary>
+        /// This function get member by Country using like %@Country%
+        /// </summary>
+        /// <param name="country"></param>
+        /// <returns>return List member by Name</returns>
+        public IEnumerable<MemberObject> GetMemberByCountry(string country)
+        {
+            DataTable data = new DataTable();
+            var members = new List<MemberObject>();
+            string Sqlquery = "SELECT [id], [name], [email], [password], [city], [country] " +
+                "FROM[FStore].[dbo].[Member] where [country] LIKE @country";
+            using (SqlConnection connection = new SqlConnection(GetConnectionString()))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand(Sqlquery, connection);
+                command.Parameters.AddWithValue("@country", "%" + country.Trim() + "%");
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                adapter.Fill(data);
+                members = ConvertToList<MemberObject>(data);
+                connection.Close();
+            }
+            return members;
+        }
+        /// <summary>
         /// This function get set list city from database
         /// </summary>
         /// <returns>return set list city</returns>
@@ -212,9 +258,9 @@ namespace DataAccess.Repository
             return null;
         }
         /// <summary>
-        /// 
+        /// This function get set list country from database
         /// </summary>
-        /// <returns></returns>
+        /// <returns>return set list country</returns>
         public IEnumerable<string> GetCountryList()
         {
             DataTable data = new DataTable();
@@ -231,6 +277,15 @@ namespace DataAccess.Repository
                 .Select(x => x.Field<string>("country"));
                 connection.Close();
             }
+            return list;
+        }
+        /// <summary>
+        /// This function sorting list members by name
+        /// </summary>
+        /// <returns>return list member</returns>
+        public IEnumerable<MemberObject> DescendingSort()
+        {
+            var list = GetAllMember().OrderByDescending(x => x.name).ToList();
             return list;
         }
         public bool Login(string email, string password, out string msg)

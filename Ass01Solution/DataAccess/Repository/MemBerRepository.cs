@@ -6,6 +6,11 @@ namespace DataAccess.Repository
 {
     public class MemBerRepository : IMemBerRepository
     {
+        public IEnumerable<MemberObject> DescendingSort()
+        {
+            return MemBerDAO.Instace.DescendingSort();
+        }
+
         public IEnumerable<string> GetCityList()
         {
             return MemBerDAO.Instace.GetCityList();
@@ -15,6 +20,16 @@ namespace DataAccess.Repository
         {
             return MemBerDAO.Instace.GetCountryList();
             //var listContry = contryList.Select(s => new { value = s }).ToList();
+        }
+
+        public IEnumerable<MemberObject> GetMemberByCity(string city)
+        {
+            return MemBerDAO.Instace.GetMemberByCity(city);
+        }
+
+        public IEnumerable<MemberObject> GetMemberByCountry(string country)
+        {
+            return MemBerDAO.Instace.GetMemberByCountry(country);
         }
 
         public IEnumerable<MemberObject> GetMemberById(int id)
