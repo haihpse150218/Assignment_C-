@@ -123,6 +123,7 @@
             this.txtUpdateEmail.Name = "txtUpdateEmail";
             this.txtUpdateEmail.Size = new System.Drawing.Size(246, 27);
             this.txtUpdateEmail.TabIndex = 8;
+            this.txtUpdateEmail.TextChanged += new System.EventHandler(this.txtUpdateEmail_TextChanged);
             // 
             // txtUpdateName
             // 

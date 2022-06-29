@@ -42,6 +42,11 @@ namespace DataAccess.Repository
             MemBerDAO.Instace.RemoveMember(id);
         }
 
+        public bool IsValidateEmail(string email, out string msg)
+        {
+            return MemBerDAO.Instace.IsValidateEmail(email, out msg);
+        }
+
         void IMemBerRepository.UpdateInfo(int id, string name, string email, string password, string city, string country)
         {
             MemBerDAO.Instace.UpdateInfo(id, name, email, password, city, country);

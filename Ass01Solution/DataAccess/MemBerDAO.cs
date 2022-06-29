@@ -7,6 +7,7 @@ using System.Data;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Net.Mail;
 
 namespace DataAccess.Repository
 {
@@ -45,6 +46,23 @@ namespace DataAccess.Repository
             connectionString = config["ConnectionStrings:FStoreDB"];
             GetDefaultAdmin();
             return connectionString;
+        }
+
+        internal bool IsValidateEmail(string email, out string msg)
+        {
+            bool flag = false;
+            msg = null;
+            try
+            {
+                var mail = new MailAddress(email);
+                bool isValidEmail = mail.Host.Contains(".");
+                flag = true;
+            }
+            catch (Exception Ex)
+            {
+                msg = Ex.Message;
+            }
+            return flag;
         }
 
         public Object GetDefaultAdmin()

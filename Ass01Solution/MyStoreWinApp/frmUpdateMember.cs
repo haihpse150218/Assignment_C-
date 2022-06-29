@@ -1,4 +1,5 @@
-﻿using System;
+﻿using System.Net.Mail;
+using System;
 using DataAccess.Repository;
 using System.Windows.Forms;
 using Microsoft.Data.SqlClient;
@@ -25,6 +26,7 @@ namespace MyStoreWinApp
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            string msg = null;
             int id = Convert.ToInt32(txtUpdateID.Text);
             string name = txtUpdateName.Text.Trim();
             string email = txtUpdateEmail.Text.Trim();
@@ -37,11 +39,17 @@ namespace MyStoreWinApp
                 MessageBox.Show("Email, password is required!");
             }
             else
-            {
+            { 
                 IMemBerRepository memBerRepository = new MemBerRepository();
-                memBerRepository.UpdateInfo(id, name, email, password, city, country);
+                if(!memBerRepository.IsValidateEmail(email, out msg))
+                {
+                    MessageBox.Show(msg);
+                }
+                else
+                {
+                    memBerRepository.UpdateInfo(id, name, email, password, city, country);
+                }
             }
-            
         }
 
         private void btnCloseUpdate_Click(object sender, EventArgs e)
@@ -50,6 +58,11 @@ namespace MyStoreWinApp
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txtUpdateEmail_TextChanged(object sender, EventArgs e)
         {
 
         }

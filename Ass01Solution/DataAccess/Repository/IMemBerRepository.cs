@@ -14,5 +14,6 @@ namespace DataAccess.Repository
         public bool Login(string email, string password, out string msg);
         void UpdateInfo(int id, string name, string email, string password, string city, string country);
         void RemoveMember(int id);
+        public bool IsValidateEmail(string email, out string msg);
     }
 }
