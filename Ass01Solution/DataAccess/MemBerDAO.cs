@@ -255,7 +255,7 @@ namespace DataAccess.Repository
                 connection.Close();
             }
             
-            return null;
+            return list;
         }
         /// <summary>
         /// This function get set list country from database

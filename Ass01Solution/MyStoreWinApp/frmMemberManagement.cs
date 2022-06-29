@@ -87,26 +87,27 @@ namespace MyStoreWinApp
 
         private void cbFilterByCity_SelectedValueChanged(object sender, EventArgs e)
         {
-            cbFilterByCountry.DisplayMember = "city";
+
             ComboBox cb = sender as ComboBox;
-            var result = memBerRepository.GetMemberByCity(cb.ToString());
+            var result = memBerRepository.GetMemberByCity(cb.SelectedItem.ToString());
             dgvDataView.DataSource = result;
             dgvDataView.Show();
         }
 
         private void cbFilterByCountry_SelectedValueChanged(object sender, EventArgs e)
         {
-            cbFilterByCity.DisplayMember = "country";
             ComboBox cb = sender as ComboBox;
-            var result = memBerRepository.GetMemberByCountry(cb.ToString());
+            var result = memBerRepository.GetMemberByCountry(cb.SelectedItem.ToString());
             dgvDataView.DataSource = result;
             dgvDataView.Show();
         }
 
         private void frmMemberManagement_Load(object sender, EventArgs e)
         {
-            cbFilterByCity.DataSource = memBerRepository.GetCityList();
-            cbFilterByCountry.DataSource = memBerRepository.GetCountryList();
+            cbFilterByCity.DataSource = memBerRepository.GetCityList().ToArray();
+            cbFilterByCity.DisplayMember = "city";
+            cbFilterByCountry.DataSource = memBerRepository.GetCountryList().ToArray();
+            cbFilterByCountry.DisplayMember = "country";
         }
     }
 }
