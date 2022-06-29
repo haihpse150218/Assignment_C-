@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wX3i4U8GdAXQ3hXcM5AxnPT8jJZ5elXJo0kluqHqDWYbsq/LpCB2Vms8NI4xnrRPX2EzR8ux/fTLXaBNwgTQwA==",
+  "dgSpecHash": "PRnIDDzL2hFvPJhGSUsgvenpdVzxkQSQu4vGIqTY1Q/vtC4rSIRQCaD7ethRoFazQbjDG9q3i/JviCMzLBAfqw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Admin\\OneDrive\\Documents\\GitHub\\Assignment_C-\\Ass01Solution\\MyStoreWinApp\\MyStoreWinApp.csproj",
+  "projectFilePath": "D:\\learn\\CN5\\PRN211\\Assignment\\Assignment1\\Assignment_C-\\Ass01Solution\\MyStoreWinApp\\MyStoreWinApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.2\\microsoft.data.sqlclient.2.1.2.nupkg.sha512",

@@ -57,6 +57,7 @@ namespace MyStoreWinApp
         {
             frmCreate frmCreate = new frmCreate();
             frmCreate.ShowDialog();
+            LoadMemberList();
             
         }
 

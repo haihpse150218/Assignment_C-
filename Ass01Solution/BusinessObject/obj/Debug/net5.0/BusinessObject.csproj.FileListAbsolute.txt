@@ -22,3 +22,15 @@ C:\Users\Admin\OneDrive\Documents\GitHub\Assignment_C-\Ass01Solution\BusinessObj
 C:\Users\Admin\OneDrive\Documents\GitHub\Assignment_C-\Ass01Solution\BusinessObject\obj\Debug\net5.0\refint\BusinessObject.dll
 C:\Users\Admin\OneDrive\Documents\GitHub\Assignment_C-\Ass01Solution\BusinessObject\obj\Debug\net5.0\BusinessObject.pdb
 C:\Users\Admin\OneDrive\Documents\GitHub\Assignment_C-\Ass01Solution\BusinessObject\obj\Debug\net5.0\ref\BusinessObject.dll
+D:\learn\CN5\PRN211\Assignment\Assignment1\Assignment_C-\Ass01Solution\BusinessObject\bin\Debug\net5.0\BusinessObject.deps.json
+D:\learn\CN5\PRN211\Assignment\Assignment1\Assignment_C-\Ass01Solution\BusinessObject\bin\Debug\net5.0\BusinessObject.dll
+D:\learn\CN5\PRN211\Assignment\Assignment1\Assignment_C-\Ass01Solution\BusinessObject\bin\Debug\net5.0\BusinessObject.pdb
+D:\learn\CN5\PRN211\Assignment\Assignment1\Assignment_C-\Ass01Solution\BusinessObject\obj\Debug\net5.0\BusinessObject.csproj.AssemblyReference.cache
+D:\learn\CN5\PRN211\Assignment\Assignment1\Assignment_C-\Ass01Solution\BusinessObject\obj\Debug\net5.0\BusinessObject.GeneratedMSBuildEditorConfig.editorconfig
+D:\learn\CN5\PRN211\Assignment\Assignment1\Assignment_C-\Ass01Solution\BusinessObject\obj\Debug\net5.0\BusinessObject.AssemblyInfoInputs.cache
+D:\learn\CN5\PRN211\Assignment\Assignment1\Assignment_C-\Ass01Solution\BusinessObject\obj\Debug\net5.0\BusinessObject.AssemblyInfo.cs
+D:\learn\CN5\PRN211\Assignment\Assignment1\Assignment_C-\Ass01Solution\BusinessObject\obj\Debug\net5.0\BusinessObject.csproj.CoreCompileInputs.cache
+D:\learn\CN5\PRN211\Assignment\Assignment1\Assignment_C-\Ass01Solution\BusinessObject\obj\Debug\net5.0\BusinessObject.dll
+D:\learn\CN5\PRN211\Assignment\Assignment1\Assignment_C-\Ass01Solution\BusinessObject\obj\Debug\net5.0\refint\BusinessObject.dll
+D:\learn\CN5\PRN211\Assignment\Assignment1\Assignment_C-\Ass01Solution\BusinessObject\obj\Debug\net5.0\BusinessObject.pdb
+D:\learn\CN5\PRN211\Assignment\Assignment1\Assignment_C-\Ass01Solution\BusinessObject\obj\Debug\net5.0\ref\BusinessObject.dll

@@ -325,6 +325,24 @@ namespace DataAccess.Repository
             return flag;
         }
 
+        public void Create(MemberObject member)
+        {
+
+            string Sqlquery = "INSERT  [dbo].[Member] VALUES (@name,@email,@password,@city,@country)";
+            using (SqlConnection connection = new SqlConnection(GetConnectionString()))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand(Sqlquery, connection);
+                command.Parameters.AddWithValue("@name", member.name);
+                command.Parameters.AddWithValue("@email", member.email);
+                command.Parameters.AddWithValue("@password", member.password);
+                command.Parameters.AddWithValue("@city", member.city);
+                command.Parameters.AddWithValue("@country", member.country);
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                command.ExecuteNonQuery();
+                connection.Close();
+            }
+        }
 
     }
 }

@@ -51,5 +51,9 @@ namespace DataAccess.Repository
         {
             MemBerDAO.Instace.UpdateInfo(id, name, email, password, city, country);
         }
+        public void CreateMember(MemberObject member)
+        {
+            MemBerDAO.Instace.Create(member);
+        }
     }
 }
