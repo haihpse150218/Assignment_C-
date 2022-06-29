@@ -1,4 +1,5 @@
-﻿using DataAccess.Repository;
+﻿using BusinessObject;
+using DataAccess.Repository;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,7 +25,7 @@ namespace MyStoreWinApp
 
         private void frmLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if(MessageBox.Show("Are you sur to exit?","Exit Confirm", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.Cancel)
+            if(MessageBox.Show("Are you sure to exit?","Exit Confirm", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.Cancel)
             {
                 e.Cancel = true;
             }
@@ -32,9 +33,12 @@ namespace MyStoreWinApp
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            MemberObject memberObject = null;
+
             string email = txtEmail.Text.Trim();
             string password = txtPassword.Text.Trim();
-            if (Login(email, password))
+            memberObject = LoginAsUser(email, password);
+            if (LoginAsAdmin(email, password))
             {
                 frmMemberManagement formManagerMember = new frmMemberManagement();
                 this.Hide();
@@ -42,18 +46,39 @@ namespace MyStoreWinApp
                 this.Show();
             }
            
+            else if(memberObject!=null)
+            {
+                
+                frmUser formUser = new frmUser(memberObject);
+                this.Hide();
+                formUser.ShowDialog();
+                this.Show();
+            }
+            
+           
         }
-        bool Login(string email, string password)
+        
+
+        bool LoginAsAdmin(string email, string password)
         {
+            
             bool flag = false;
-            string msg = null;
             IMemBerRepository memBerRepository = new MemBerRepository();
-           flag =  memBerRepository.Login(email, password, out msg);
-            if (msg != null)
+            flag = memBerRepository.LoginAsAdmin(email, password);
+            return flag;
+        }
+
+        MemberObject LoginAsUser(string email, string password)
+        {
+            string msg = null;
+            MemberObject memberObject = null;
+            IMemBerRepository memBerRepository = new MemBerRepository();
+            memberObject = memBerRepository.LoginAsUser(email, password,out msg);
+            if(msg!=null)
             {
                 MessageBox.Show(msg);
             }
-            return flag;
+            return memberObject;
         }
     }
 }
