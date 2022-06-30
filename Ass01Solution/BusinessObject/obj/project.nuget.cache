@@ -1,0 +1,14 @@
+{
+  "version": 2,
+<<<<<<< HEAD
+  "dgSpecHash": "cumTcgrZDYQA/3OO0sbLCd67C4tX1Fzzu3lebBpmoUxp24cDC3rO5xzkELjbnydskzFmcAmobDMpSTvvgABMRA==",
+  "success": true,
+  "projectFilePath": "F:\\FPT-ky 5\\PRN211\\Ass1-clone\\haihpse150218\\Assignment_C-\\Ass01Solution\\BusinessObject\\BusinessObject.csproj",
+=======
+  "dgSpecHash": "GDBhAFCjmmWLN0i2UZVjwgdnV3r8urI2re/SdGILs/AJj44sPvwOLeExDF4jeCqTYeO87IYJ7qqkDNkkQSayyA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\user\\Desktop\\FPT University\\Semester 5\\PRN211\\Assignment\\Ass01Solution\\BusinessObject\\BusinessObject.csproj",
+>>>>>>> origin/dev_Login
+  "expectedPackageFiles": [],
+  "logs": []
+}
