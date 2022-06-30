@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvDataView = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -38,18 +39,22 @@
             this.btnCreating = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnSearchByName = new System.Windows.Forms.Button();
-            this.lbSearchByName = new System.Windows.Forms.TextBox();
+            this.txtSearchByName = new System.Windows.Forms.TextBox();
             this.btnSearchById = new System.Windows.Forms.Button();
-            this.lbSearchById = new System.Windows.Forms.TextBox();
+            this.txtSearchById = new System.Windows.Forms.TextBox();
             this.lbFilterByCountry = new System.Windows.Forms.Label();
             this.lbFilterByCity = new System.Windows.Forms.Label();
             this.cbFilterByCountry = new System.Windows.Forms.ComboBox();
             this.cbFilterByCity = new System.Windows.Forms.ComboBox();
             this.btnLogOut = new System.Windows.Forms.Button();
+            this.ErrorSearchID = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ErrorSearchName = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDataView)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorSearchID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorSearchName)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -144,9 +149,9 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.btnSearchByName);
-            this.panel3.Controls.Add(this.lbSearchByName);
+            this.panel3.Controls.Add(this.txtSearchByName);
             this.panel3.Controls.Add(this.btnSearchById);
-            this.panel3.Controls.Add(this.lbSearchById);
+            this.panel3.Controls.Add(this.txtSearchById);
             this.panel3.Controls.Add(this.lbFilterByCountry);
             this.panel3.Controls.Add(this.lbFilterByCity);
             this.panel3.Controls.Add(this.cbFilterByCountry);
@@ -159,41 +164,43 @@
             // 
             // btnSearchByName
             // 
-            this.btnSearchByName.Location = new System.Drawing.Point(509, 47);
+            this.btnSearchByName.Location = new System.Drawing.Point(488, 47);
             this.btnSearchByName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSearchByName.Name = "btnSearchByName";
-            this.btnSearchByName.Size = new System.Drawing.Size(118, 31);
+            this.btnSearchByName.Size = new System.Drawing.Size(139, 31);
             this.btnSearchByName.TabIndex = 7;
             this.btnSearchByName.Text = "Search By Name";
             this.btnSearchByName.UseVisualStyleBackColor = true;
             this.btnSearchByName.Click += new System.EventHandler(this.btnSearchByName_Click);
             // 
-            // lbSearchByName
+            // txtSearchByName
             // 
-            this.lbSearchByName.Location = new System.Drawing.Point(301, 48);
-            this.lbSearchByName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.lbSearchByName.Name = "lbSearchByName";
-            this.lbSearchByName.Size = new System.Drawing.Size(201, 27);
-            this.lbSearchByName.TabIndex = 6;
+            this.txtSearchByName.Location = new System.Drawing.Point(281, 48);
+            this.txtSearchByName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtSearchByName.Name = "txtSearchByName";
+            this.txtSearchByName.Size = new System.Drawing.Size(201, 27);
+            this.txtSearchByName.TabIndex = 6;
+            this.txtSearchByName.Validating += new System.ComponentModel.CancelEventHandler(this.txtSearchByName_Validating);
             // 
             // btnSearchById
             // 
-            this.btnSearchById.Location = new System.Drawing.Point(509, 8);
+            this.btnSearchById.Location = new System.Drawing.Point(488, 8);
             this.btnSearchById.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSearchById.Name = "btnSearchById";
-            this.btnSearchById.Size = new System.Drawing.Size(118, 31);
+            this.btnSearchById.Size = new System.Drawing.Size(139, 31);
             this.btnSearchById.TabIndex = 5;
             this.btnSearchById.Text = "Search By ID";
             this.btnSearchById.UseVisualStyleBackColor = true;
             this.btnSearchById.Click += new System.EventHandler(this.btnSearchById_Click);
             // 
-            // lbSearchById
+            // txtSearchById
             // 
-            this.lbSearchById.Location = new System.Drawing.Point(301, 9);
-            this.lbSearchById.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.lbSearchById.Name = "lbSearchById";
-            this.lbSearchById.Size = new System.Drawing.Size(201, 27);
-            this.lbSearchById.TabIndex = 4;
+            this.txtSearchById.Location = new System.Drawing.Point(281, 9);
+            this.txtSearchById.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtSearchById.Name = "txtSearchById";
+            this.txtSearchById.Size = new System.Drawing.Size(201, 27);
+            this.txtSearchById.TabIndex = 4;
+            this.txtSearchById.Validating += new System.ComponentModel.CancelEventHandler(this.txtSearchById_Validating);
             // 
             // lbFilterByCountry
             // 
@@ -235,7 +242,7 @@
             // 
             // btnLogOut
             // 
-            this.btnLogOut.Location = new System.Drawing.Point(677, 5);
+            this.btnLogOut.Location = new System.Drawing.Point(680, 5);
             this.btnLogOut.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(86, 31);
@@ -244,11 +251,19 @@
             this.btnLogOut.UseVisualStyleBackColor = true;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
+            // ErrorSearchID
+            // 
+            this.ErrorSearchID.ContainerControl = this;
+            // 
+            // ErrorSearchName
+            // 
+            this.ErrorSearchName.ContainerControl = this;
+            // 
             // frmMemberManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(809, 459);
+            this.ClientSize = new System.Drawing.Size(796, 459);
             this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -264,6 +279,8 @@
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorSearchID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorSearchName)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -283,9 +300,11 @@
         private System.Windows.Forms.ComboBox cbFilterByCity;
         private System.Windows.Forms.Button btnSort;
         private System.Windows.Forms.Button btnSearchById;
-        private System.Windows.Forms.TextBox lbSearchById;
+        private System.Windows.Forms.TextBox txtSearchById;
         private System.Windows.Forms.Button btnSearchByName;
-        private System.Windows.Forms.TextBox lbSearchByName;
+        private System.Windows.Forms.TextBox txtSearchByName;
         private System.Windows.Forms.Button btnLogOut;
+        private System.Windows.Forms.ErrorProvider ErrorSearchID;
+        private System.Windows.Forms.ErrorProvider ErrorSearchName;
     }
 }
