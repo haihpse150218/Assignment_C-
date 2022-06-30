@@ -1,7 +1,6 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
     "F:\\FPT-ky 5\\PRN211\\Ass1-clone\\haihpse150218\\Assignment_C-\\Ass01Solution\\BusinessObject\\BusinessObject.csproj": {}
   },
   "projects": {
@@ -13,25 +12,12 @@
         "projectPath": "F:\\FPT-ky 5\\PRN211\\Ass1-clone\\haihpse150218\\Assignment_C-\\Ass01Solution\\BusinessObject\\BusinessObject.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
         "outputPath": "F:\\FPT-ky 5\\PRN211\\Ass1-clone\\haihpse150218\\Assignment_C-\\Ass01Solution\\BusinessObject\\obj\\",
-=======
-    "C:\\Users\\user\\Desktop\\FPT University\\Semester 5\\PRN211\\Assignment\\Ass01Solution\\BusinessObject\\BusinessObject.csproj": {}
-  },
-  "projects": {
-    "C:\\Users\\user\\Desktop\\FPT University\\Semester 5\\PRN211\\Assignment\\Ass01Solution\\BusinessObject\\BusinessObject.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Desktop\\FPT University\\Semester 5\\PRN211\\Assignment\\Ass01Solution\\BusinessObject\\BusinessObject.csproj",
-        "projectName": "BusinessObject",
-        "projectPath": "C:\\Users\\user\\Desktop\\FPT University\\Semester 5\\PRN211\\Assignment\\Ass01Solution\\BusinessObject\\BusinessObject.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Desktop\\FPT University\\Semester 5\\PRN211\\Assignment\\Ass01Solution\\BusinessObject\\obj\\",
->>>>>>> origin/dev_Login
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "E:\\Visual components,tolls,SDK\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -72,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -62,11 +62,5 @@ namespace DataAccess.Repository
         {
             return MemBerDAO.Instace.GetMember(email, password);
         }
-
-        void IMemBerRepository.UpdateInfo(int id, string name, string email, string password, string city, string country)
-        {
-            MemBerDAO.Instace.UpdateInfo(id, name, email, password, city, country);
-        }
-
     }
 }

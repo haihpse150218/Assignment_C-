@@ -187,7 +187,7 @@ namespace DataAccess.Repository
         }
 
 
-        internal void UpdateInfo(int id, string name, string email, string password, string city, string country)
+        public void UpdateInfo(int id, string name, string email, string password, string city, string country)
         {
             string Sqlquery = "UPDATE Member SET name=@name, email=@email, password=@password, city=@city, country=@country WHERE id=@id";
             using (SqlConnection connection = new SqlConnection(GetConnectionString()))
@@ -406,24 +406,7 @@ namespace DataAccess.Repository
             return member;
         }
 
-        internal void UpdateInfo(int id, string name, string email, string password, string city, string country)
-        {
-            string Sqlquery = "UPDATE Member SET name=@name, email=@email, password=@password, city=@city, country=@country WHERE id=@id";
-            using (SqlConnection connection = new SqlConnection(GetConnectionString()))
-            {
-                connection.Open();
-                SqlCommand command = new SqlCommand(Sqlquery, connection);
-                command.Parameters.AddWithValue("@id", id);
-                command.Parameters.AddWithValue("@name", name);
-                command.Parameters.AddWithValue("@email", email);
-                command.Parameters.AddWithValue("@password", password);
-                command.Parameters.AddWithValue("@city", city);
-                command.Parameters.AddWithValue("@country", country);
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                command.ExecuteNonQuery();
-                connection.Close();
-            }
-        }
+        
 
 
     }

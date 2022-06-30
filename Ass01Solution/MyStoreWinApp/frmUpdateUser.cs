@@ -1,5 +1,6 @@
 ﻿using BusinessObject;
 using DataAccess.Repository;
+using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -51,7 +52,14 @@ namespace MyStoreWinApp
                 else
                 {
                     IMemBerRepository memBerRepository = new MemBerRepository();
-                    memBerRepository.UpdateInfo(id, name, email, password, city, country);
+                    try
+                    {
+                        memBerRepository.UpdateInfo(id, name, email, password, city, country);
+                    }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show("Update have Error!!!: \n" + ex.Message);
+                    }
                     MessageBox.Show("Update Success!");
                 }
 

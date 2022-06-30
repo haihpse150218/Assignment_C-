@@ -1,6 +1,7 @@
 ﻿using BusinessObject;
 using DataAccess.Repository;
 using System;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace MyStoreWinApp

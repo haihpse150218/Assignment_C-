@@ -2049,31 +2049,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\user\\.nuget\\packages\\": {},
-    "E:\\Visual components,tolls,SDK\\NuGetPackages": {}
+    "C:\\Users\\Admin\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
       "projectUniqueName": "F:\\FPT-ky 5\\PRN211\\Ass1-clone\\haihpse150218\\Assignment_C-\\Ass01Solution\\DataAccess\\DataAccess.csproj",
       "projectName": "DataAccess",
       "projectPath": "F:\\FPT-ky 5\\PRN211\\Ass1-clone\\haihpse150218\\Assignment_C-\\Ass01Solution\\DataAccess\\DataAccess.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
       "outputPath": "F:\\FPT-ky 5\\PRN211\\Ass1-clone\\haihpse150218\\Assignment_C-\\Ass01Solution\\DataAccess\\obj\\",
-=======
-      "projectUniqueName": "C:\\Users\\user\\Desktop\\FPT University\\Semester 5\\PRN211\\Assignment\\Ass01Solution\\DataAccess\\DataAccess.csproj",
-      "projectName": "DataAccess",
-      "projectPath": "C:\\Users\\user\\Desktop\\FPT University\\Semester 5\\PRN211\\Assignment\\Ass01Solution\\DataAccess\\DataAccess.csproj",
-      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\Desktop\\FPT University\\Semester 5\\PRN211\\Assignment\\Ass01Solution\\DataAccess\\obj\\",
->>>>>>> origin/dev_Login
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "E:\\Visual components,tolls,SDK\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -2088,13 +2080,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-<<<<<<< HEAD
             "F:\\FPT-ky 5\\PRN211\\Ass1-clone\\haihpse150218\\Assignment_C-\\Ass01Solution\\BusinessObject\\BusinessObject.csproj": {
               "projectPath": "F:\\FPT-ky 5\\PRN211\\Ass1-clone\\haihpse150218\\Assignment_C-\\Ass01Solution\\BusinessObject\\BusinessObject.csproj"
-=======
-            "C:\\Users\\user\\Desktop\\FPT University\\Semester 5\\PRN211\\Assignment\\Ass01Solution\\BusinessObject\\BusinessObject.csproj": {
-              "projectPath": "C:\\Users\\user\\Desktop\\FPT University\\Semester 5\\PRN211\\Assignment\\Ass01Solution\\BusinessObject\\BusinessObject.csproj"
->>>>>>> origin/dev_Login
             }
           }
         }
@@ -2147,7 +2134,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
       }
     }
   }
