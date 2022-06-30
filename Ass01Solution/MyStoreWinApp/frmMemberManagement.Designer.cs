@@ -215,13 +215,14 @@
             // 
             // cbFilterByCountry
             // 
+            this.cbFilterByCountry.DisplayMember = "Select Contry";
             this.cbFilterByCountry.FormattingEnabled = true;
             this.cbFilterByCountry.Location = new System.Drawing.Point(104, 35);
             this.cbFilterByCountry.Name = "cbFilterByCountry";
             this.cbFilterByCountry.Size = new System.Drawing.Size(121, 23);
-            this.cbFilterByCountry.TabIndex = 1;
+            this.cbFilterByCountry.TabIndex = 2;
             this.cbFilterByCountry.Text = "Select Country";
-            this.cbFilterByCountry.SelectedIndexChanged += new System.EventHandler(this.cbFilterByCountry_SelectedIndexChanged);
+            this.cbFilterByCountry.SelectedValueChanged += new System.EventHandler(this.cbFilterByCountry_SelectedValueChanged);
             this.cbFilterByCountry.Click += new System.EventHandler(this.cbFilterByCountry_Click);
             // 
             // btnLogOut

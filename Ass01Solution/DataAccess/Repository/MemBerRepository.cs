@@ -76,5 +76,9 @@ namespace DataAccess.Repository
         {
             return MemBerDAO.Instace.SortByCountry(country);
         }
+        public void CreateMember(MemberObject member)
+        {
+            MemBerDAO.Instace.Create(member);
+        }
     }
 }

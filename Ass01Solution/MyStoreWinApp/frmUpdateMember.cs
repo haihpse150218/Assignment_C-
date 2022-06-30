@@ -34,7 +34,7 @@ namespace MyStoreWinApp
             string city = txtUpdateCity.Text.Trim();
             string country = txtUpdateCountry.Text.Trim();
             
-            if (email == null && password == null)
+            if (email == null || password == null)
             {
                 MessageBox.Show("Email, password is required!");
             }
