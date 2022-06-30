@@ -41,13 +41,14 @@ namespace MyStoreWinApp
                 string country = txtCountry.Text.Trim();
                 Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
                 Match match = regex.Match(email);
+
                 if (email == null || !match.Success)
                 {
                     MessageBox.Show("Email is invalid");
                 }
-                else if (password == null)
+                if (password == null)
                 {
-                    MessageBox.Show("Email, password is required!");
+                    MessageBox.Show("Password is required!");
                 }
                 else
                 {

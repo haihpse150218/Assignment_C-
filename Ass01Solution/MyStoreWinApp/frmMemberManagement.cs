@@ -83,6 +83,7 @@ namespace MyStoreWinApp
         {
             frmCreate frmCreate = new frmCreate();
             frmCreate.ShowDialog();
+            LoadMemberList();
             
         }
 
@@ -188,7 +189,7 @@ namespace MyStoreWinApp
             dgvDataView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
         }
-        void LoadByContry(string country)
+        void LoadByCountry(string country)
         {
             IMemBerRepository memBerRepository = new MemBerRepository();
             List<MemberObject> list = memBerRepository.SortByCountry(country).ToList();
@@ -202,7 +203,7 @@ namespace MyStoreWinApp
         private void cbFilterByCity_SelectedValueChanged(object sender, EventArgs e)
         {
             LoadCity();
-            //LoadCountry();
+           
             string city = cbFilterByCity.SelectedItem.ToString();
             LoadByCity(city);
         }
@@ -212,15 +213,15 @@ namespace MyStoreWinApp
             LoadCity();
         }
 
-        private void cbFilterByCountry_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            LoadCountry();
-            string country = cbFilterByCountry.SelectedItem.ToString();
-            LoadByContry(country);
-        }
         private void cbFilterByCountry_Click(object sender, EventArgs e)
         {
             LoadCountry();
+        }
+
+        private void cbFilterByCountry_SelectedValueChanged(object sender, EventArgs e)
+        {
+            string country = cbFilterByCountry.SelectedItem.ToString();
+            LoadByCountry(country);
         }
     }
 }

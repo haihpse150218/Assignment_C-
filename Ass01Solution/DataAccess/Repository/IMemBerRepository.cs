@@ -20,6 +20,9 @@ namespace DataAccess.Repository
         public IEnumerable<MemberObject> DescendingSort();
         public IEnumerable<MemberObject> SortByCity(string city);
         public IEnumerable<MemberObject> SortByCountry(string country);
+        public void CreateMember(MemberObject member);
+
+
 
     }
 }
