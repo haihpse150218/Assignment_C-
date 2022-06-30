@@ -62,5 +62,19 @@ namespace DataAccess.Repository
         {
             return MemBerDAO.Instace.GetMember(email, password);
         }
+        public IEnumerable<MemberObject> DescendingSort()
+        {
+            return MemBerDAO.Instace.DescendingSort();
+        }
+
+        public IEnumerable<MemberObject> SortByCity(string city)
+        {
+            return MemBerDAO.Instace.SortByCity(city);
+        }
+
+        public IEnumerable<MemberObject> SortByCountry(string country)
+        {
+            return MemBerDAO.Instace.SortByCountry(country);
+        }
     }
 }

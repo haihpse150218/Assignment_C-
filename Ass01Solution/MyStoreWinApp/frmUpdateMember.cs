@@ -47,6 +47,7 @@ namespace MyStoreWinApp
                 }
                 else
                 {
+                    this.DialogResult = DialogResult.OK;
                     memBerRepository.UpdateInfo(id, name, email, password, city, country);
                 }
             }

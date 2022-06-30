@@ -267,7 +267,7 @@ namespace DataAccess.Repository
                 connection.Close();
             }
             
-            return null;
+            return list;
         }
         /// <summary>
         /// 
@@ -405,8 +405,27 @@ namespace DataAccess.Repository
             }
             return member;
         }
+        /// <summary>
+        /// This function sorting list members by name
+        /// </summary>
+        /// <returns>return list member</returns>
+        public IEnumerable<MemberObject> DescendingSort()
+        {
+            IEnumerable<MemberObject> list = GetAllMember().OrderByDescending(x => x.name);
+            return list;
+        }
+        public IEnumerable<MemberObject> SortByCity(string city)
+        {
+            IEnumerable<MemberObject> list = GetAllMember().Where(x => x.city == city);
+            return list;
+        }
+        public IEnumerable<MemberObject> SortByCountry(string country)
+        {
+            IEnumerable<MemberObject> list = GetAllMember().Where(x => x.country == country);
+            return list;
+        }
 
-        
+
 
 
     }

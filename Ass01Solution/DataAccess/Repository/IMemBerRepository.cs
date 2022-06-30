@@ -17,6 +17,9 @@ namespace DataAccess.Repository
         public bool LoginAsAdmin(string email, string password);
         public MemberObject LoginAsUser(string email, string password,out string msg);
         public MemberObject GetMember(string email, string password);
+        public IEnumerable<MemberObject> DescendingSort();
+        public IEnumerable<MemberObject> SortByCity(string city);
+        public IEnumerable<MemberObject> SortByCountry(string country);
 
     }
 }
