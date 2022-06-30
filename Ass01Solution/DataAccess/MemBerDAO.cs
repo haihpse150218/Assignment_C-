@@ -187,7 +187,7 @@ namespace DataAccess.Repository
         }
 
 
-        internal void UpdateInfo(int id, string name, string email, string password, string city, string country)
+        public void UpdateInfo(int id, string name, string email, string password, string city, string country)
         {
             string Sqlquery = "UPDATE Member SET name=@name, email=@email, password=@password, city=@city, country=@country WHERE id=@id";
             using (SqlConnection connection = new SqlConnection(GetConnectionString()))
@@ -291,15 +291,15 @@ namespace DataAccess.Repository
             }
             return list;
         }
-        public bool Login(string email, string password, out string msg)
+        public object Login(string email, string password, out string msg)
         {
             msg = "Email not found";
-            bool flag = false;
+            Object memberObject = null;
             var account = new {email,password};
             var admin = GetDefaultAdmin();
             if (account.Equals(admin))
             {
-                flag = true;
+                memberObject = account;
                 msg = null;
             }
             else
@@ -310,20 +310,103 @@ namespace DataAccess.Repository
                     {
                         if (password.Equals(m.password))
                         {
-                            flag = true; msg = null; break;
+                            memberObject = m; msg = null; break;
                         }
                         else
                         {
                             msg = "Wrong Password";
-                            flag = false;
+                           
                             break;
                         }
                     }
                 }
             }
             
+            return memberObject;
+        }
+
+        public bool LoginAsAdmin(string email, string password)
+        {
+            bool flag = false;
+            var account = new { email, password };
+            var admin = GetDefaultAdmin();
+            if (account.Equals(admin))
+            {
+                flag = true;
+
+            }
+            else
+            {
+                flag = false;
+            }
             return flag;
         }
+
+        public MemberObject LoginAsUser(string email, string password,out string msg)
+        {
+            MemberObject memberObject = null;
+            msg = "Email not found";
+            if (LoginAsAdmin(email, password))
+            {
+                msg = null;
+
+            }
+            else
+            {
+                
+                var account = new { email, password };
+
+                foreach (MemberObject m in GetAllMember())
+                {
+                    if (account.email.Equals(m.email, StringComparison.OrdinalIgnoreCase))
+                    {
+                        if (account.password.Equals(m.password))
+                        {
+                            memberObject = m;
+                            msg = null;
+                            break;
+                            
+                        }
+                        else
+                        {
+                            msg = "Wrong Password";
+                            break;
+                        }
+                    }
+                }
+            }
+            
+            return memberObject;
+        }
+
+        public MemberObject GetMember(string email, string password)
+        {
+            MemberObject member = new MemberObject();          
+            var account = new { email, password };
+            foreach (MemberObject m in GetAllMember())
+            {
+                if (account.email.Equals(m.email, StringComparison.OrdinalIgnoreCase))
+                {
+                    if (account.password.Equals(m.password))
+                    {
+                        member.id= m.id;
+                        member.name= m.name;
+                        member.email= m.email;
+                        member.password= m.password;
+                        member.city= m.city;
+                        member.country= m.country;
+                        break;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+            }
+            return member;
+        }
+
+        
 
 
     }

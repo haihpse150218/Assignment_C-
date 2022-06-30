@@ -35,7 +35,7 @@ namespace MyStoreWinApp
         {
             member = dgvDataView.CurrentRow.DataBoundItem as MemberObject;
             int id = member.id;
-            if (MessageBox.Show("Are you sure to remove this member?", "Remove Confirm", MessageBoxButtons.OK) == System.Windows.Forms.DialogResult.OK)
+            if (MessageBox.Show("Are you sure to remove this member?", "Remove Confirm", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
             {
                 IMemBerRepository memBerRepository = new MemBerRepository();
                 memBerRepository.RemoveMember(id);
